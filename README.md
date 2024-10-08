@@ -1,4 +1,8 @@
-# Astro Starter Kit: Blog
+# overworldsoft.com
+
+Code for my indie game studio site: [https://overworldsoft.com](https://overworldsoft.com), created with Astro.
+
+## Astro Starter Kit: Blog
 
 ```sh
 npm create astro@latest -- --template blog

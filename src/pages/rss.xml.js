@@ -1,17 +1,19 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import {getPublishedPostsByDateDesc, createExcerpt} from '@lib/blog';
+import { SITE_TITLE, SITE_DESCRIPTION, MAX_POSTS_RSS } from '@root/consts';
 
 export async function GET(context) {
-	const posts = await getCollection('news');
-	return rss({
-		title: SITE_TITLE,
-		description: SITE_DESCRIPTION,
-		site: context.site,
-		trailingSlash: true,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/news/${post.slug}/`,
-		})),
-	});
+  const posts = await getPublishedPostsByDateDesc(MAX_POSTS_RSS);
+  return rss({
+    title: `${SITE_TITLE} - News`,
+    description: SITE_DESCRIPTION,
+    site: context.site,
+    customData: `<generator>AstroJS</generator>`,
+    trailingSlash: true,
+    items: posts.map((post) => ({
+      ...post.data,
+      description: `${createExcerpt(post.body, 280)}...`,
+      link: `/news/${post.slug}/`,
+    })),
+  });
 }
