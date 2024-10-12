@@ -1,0 +1,69 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { appSettings } from '@root/consts';
+
+const title = appSettings.formatTitle('XBLIG Companion');
+---
+
+<Layout
+  title={title}
+  description={title}
+  activeMenu="None"
+>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>XBLIG Companion</h1>
+      <h3><i class="bi bi-exclamation-triangle-fill"></i> Update:</h3>
+      <h5>XBLIG Companion for Android is no longer supported, but you can still <a href="/downloads/XBLIGCompanion.apk">download the APK <i class="bi bi-cloud-arrow-down-fill"></i></a>.</h5>
+      <p><a class="btn btn-primary btn-lg" href="/downloads/XBLIGCompanion.apk"><i class="bi bi-cloud-arrow-down-fill"></i> Download the APK</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row pt-4">
+      <div class="col-xs-12 col-md-7">
+        <div>
+          <p class="lead">XBLIG Companion is your #1 app for the Xbox Live Indie Games (XBLIG) service on Microsoft's Xbox 360 system. Works with Android 2.1 and up.</p>
+        </div>
+        <img class="img-fluid" src="/img/xbligc/xbligc-phones.png"
+            alt="xblig companion phone preview">
+      </div>
+
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-sm-12 col-md-5">
+        <h3>Features</h3>
+        <ul>
+          <li>Modern interface supporting Android 2.1 and up.</li>
+          <li>View new and existing Xbox Live Indie Games.</li>
+          <li>View games by genre and games recently updated.</li>
+          <li>View game screenshots, links to youtube trailers, summaries and ratings.</li>
+          <li>View top picks from the XBLIG developer community and other reputable sources.</li>
+          <li>View games by game-developer.</li>
+          <li>Search by game name or by game-developer name.</li>
+          <li>Links from each game to the MS Marketplace, so you can log in with your Live ID and download or even purchase the game right from your Android device!</li>
+          <li>Modern interface allows you to swipe between tabs.</li>
+          <li>It's free. And we won't show you any ads.</li>
+        </ul>
+      </div>
+      <div class="col-sm-12 clearfix">
+        <h3>Screenshots</h3>
+        <div class="phone-screenshots">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-01.jpg"
+            alt="xblig companion screenshot 1">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-02.jpg"
+            alt="xblig companion screenshot 2">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-03.jpg"
+            alt="xblig companion screenshot 3">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-04.jpg"
+            alt="xblig companion screenshot 4">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-05.jpg"
+            alt="xblig companion screenshot 5">
+          <img class="img-fluid" src="/img/xbligc/xbligc-screen-06.jpg"
+            alt="xblig companion screenshot 6">
+        </div>
+
+        <h3>How it works</h3>
+        <p>The XBLIG companion works by scraping the RSS feeds of XboxIndies.com, as well as the XML and CSV data for all of the games. The process is fully automated, so as the games are updated, so are the feeds.</p>
+      </div>
+    </div>
+  </div>
+</Layout>

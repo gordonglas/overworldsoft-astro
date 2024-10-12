@@ -1,0 +1,144 @@
+/* old bootstrap stuff */
+
+.jumbotron {
+    padding: 2rem 1rem;
+    border-radius: .3rem;
+}
+
+.jumbotron h1 {
+    font-weight: 700 !important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/* gatsby overrides */
+
+.news-content img.gatsby-resp-image-image {
+    box-shadow: unset !important;
+}
+
+/* custom stuff */
+
+.social-icon::before {
+    vertical-align: 6px;
+}
+
+.isso-postbox .placeholder {
+    cursor: auto;
+    opacity: unset;
+}
+
+#isso-thread .textarea {
+    width: 100%;
+}
+
+.news-post-preview {
+    max-width: 1000px !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px !important;
+}
+
+.news-content-preview,
+.read-more,
+.news-content {
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+
+.news-content-preview {
+    margin-top: 15px;
+}
+
+.news-post {
+    max-width: 1000px !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px !important;
+}
+
+.news-content {
+    padding: 0;
+    overflow: hidden;
+}
+
+.news-content p, .news-content span span.gatsby-resp-image-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.site-box {
+    border-color: #ddd;
+    border-radius: 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: none;
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px 15px;
+}
+
+.site-box h2 {
+    margin-top: 0 !important;
+}
+
+.site-margin {
+    margin-bottom: 30px;
+}
+
+.site-footer {
+    background-color: #343a40;
+    color: #99979c;
+    margin: 100px 0 0 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#site_comments {
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+.row.row-item {
+    margin-bottom: 5px;
+}
+
+.phone-screenshots .img-fluid {
+    margin: 10px 20px 10px 0;
+}
+
+.no-lr-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.image-options,
+.uploaded-images {
+    margin: 10px 0 10px 0;
+    padding: 10px 0 0 0;
+}
+
+/* override firefox's ugly select down arrow
+   https://stackoverflow.com/a/38187626/341942
+*/
+/*
+_:-moz-tree-row(hover), select.form-control {
+    padding-right: 25px;
+    background-image: url("data:image/svg+xml,\
+      <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px'\
+           height='14px' viewBox='0 0 1200 1000' fill='rgb(51,51,51)'>\
+        <path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/>\
+      </svg>");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 7px) 50%;
+    -moz-appearance: none;
+    appearance: none;
+}*/

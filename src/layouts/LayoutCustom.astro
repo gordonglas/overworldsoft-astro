@@ -1,0 +1,21 @@
+---
+// This layout doesn't include the header or footer.
+
+import BaseHead from '@components/BaseHead.astro';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <!-- This is an astro named-slot. Allows pages to specify additional html here. 
+     See https://docs.astro.build/en/basics/astro-components/#named-slots -->
+    <slot name="head" />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

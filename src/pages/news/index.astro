@@ -1,114 +1,53 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, MAX_POSTS_INDEX, appSettings } from '@root/consts';
-import FormattedDate from '../../components/FormattedDate.astro';
+import Layout from "@layouts/Layout.astro";
+import { SITE_DESCRIPTION, MAX_POSTS_NEWS_INDEX, appSettings } from '@root/consts';
+import FormattedDate from '@components/FormattedDate.astro';
 import {getPublishedPostsByDateDesc, createExcerpt} from '@lib/blog.ts';
 
-const posts = await getPublishedPostsByDateDesc(MAX_POSTS_INDEX);
+const posts = await getPublishedPostsByDateDesc(MAX_POSTS_NEWS_INDEX);
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      main {
-        width: 960px;
-      }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      ul li {
-        width: calc(50% - 1rem);
-      }
-      ul li * {
-        text-decoration: none;
-        transition: 0.2s ease;
-      }
-      ul li:first-child {
-        width: 100%;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-      ul li:first-child img {
-        width: 100%;
-      }
-      ul li:first-child .title {
-        font-size: 2.369rem;
-      }
-      ul li img {
-        margin-bottom: 0.5rem;
-        border-radius: 12px;
-      }
-      ul li a {
-        display: block;
-      }
-      .title {
-        margin: 0;
-        color: rgb(var(--black));
-        line-height: 1;
-      }
-      .date {
-        margin: 0;
-        color: rgb(var(--gray));
-      }
-      ul li a:hover h4,
-      ul li a:hover .date {
-        color: rgb(var(--accent));
-      }
-      ul a:hover img {
-        box-shadow: var(--box-shadow);
-      }
-      @media (max-width: 720px) {
-        ul {
-          gap: 0.5em;
-        }
-        ul li {
-          width: 100%;
-          text-align: center;
-        }
-        ul li:first-child {
-          margin-bottom: 0;
-        }
-        ul li:first-child .title {
-          font-size: 1.563em;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section>
-        <ul>
-          {
-            posts.map((post) => {
-              const excerpt = `${createExcerpt(post.body, 280)}...`;
+<Layout
+  title={appSettings.formatTitle("News")}
+  description={SITE_DESCRIPTION}
+  activeMenu="News"
+>
+  <div class="container-fluid pt-3">
+    {
+      posts.map((post) => {
+        const excerpt = `${createExcerpt(post.body, 280)}...`;
 
-              return (
-                <li>
-                  <a href={`/news/${post.slug}/`}>
-                    {/* <img width={720} height={360} src={post.data.heroImage} alt="" /> */}
-                    <h4 class="title">{post.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </p>
-                    <p class="news-content-preview" set:html={excerpt}></p>
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+        return (
+          <article>
+            <div class="row">
+              <div class="col-sm-12 news-post-preview">
+                <div class="card col-sm-12 px-3 shadow-sm" style="margin-bottom:30px">
+                  <h2 style="margin-top:10px">
+                    <a href={`/news/${post.slug}/`}>{post.data.title}</a>
+                  </h2>
+                  <div class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </div>
+                  <p class="news-content-preview" set:html={excerpt}></p>
+                  <p class="read-more">
+                    <a href={`/news/${post.slug}/`}>Read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      })
+    }
+
+    <div class="row">
+      <div class="col-sm-12 px-3 news-post-preview more-posts-link">
+        <h2>
+          <a href="/news/all-posts/">More posts</a>
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</Layout>

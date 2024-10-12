@@ -1,0 +1,100 @@
+body {
+	padding: 15px 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	line-height:1.6em;
+}
+
+img {
+	width: 100%;
+}
+
+#navigation h1.nav-header {
+	padding: 0 15px;
+	margin-bottom: 0;
+}
+
+#navigation a.nav-header {
+	padding: 5px 15px;
+	font-weight: bold;
+}
+
+#navigation ul.uk-nav {
+	padding: 15px 0;
+}
+
+#navigation p {
+	padding-bottom: 10px;
+}
+
+#navigation li.language-select select {
+	float: right;
+}
+
+#content h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#content img.header {
+	margin-bottom: 20px;
+}
+
+#content ul {
+	list-style-type: square;
+}
+
+#content li.done {
+	color: #008000;
+	text-decoration: line-through;
+}
+
+#content div.images div {
+	padding-bottom: 25px;
+}
+
+#content p.images-text {
+	margin-top: -15px;
+}
+
+#content .iframe-container {
+	position: relative;
+	/* Magic! Makes sure the container is high enough to show the entire iframe 
+	 * Thanks to http://andmag.se/2011/11/responsive-embeds/ */
+	padding-bottom: 56.5%;
+}
+
+#content iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 767px) {
+	h2 {
+		margin-top: 25px;
+	}
+}
+
+/* custom dark theme overrides */
+body, h1, h2, h3, h4, h5, h6, .uk-nav-side > li > a {
+    color: #DCDCDC !important;
+}
+
+body {
+    background-color: #222 !important;
+    background: #222 !important;
+}
+
+a {
+    color: #007bff !important;
+}
+
+.uk-nav-side > li > a:hover, .uk-nav-side > li > a:focus {
+    background-color: #333 !important;
+    color: #DCDCDC !important;
+    outline: 0 !important;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.1) !important;
+    text-shadow: none !important;
+}

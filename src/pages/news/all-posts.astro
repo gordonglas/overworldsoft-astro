@@ -1,0 +1,55 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { SITE_DESCRIPTION, appSettings } from '@root/consts';
+import {getPublishedPostsByDateDesc} from '@lib/blog.ts';
+
+const posts = await getPublishedPostsByDateDesc();
+
+let lastDateStr: string;
+
+let formatDate = function(date: Date) {
+  // group by month
+  return date.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+  });
+}
+
+let formatDateAndSetLastDate = function(date: Date) {
+  return lastDateStr = formatDate(date);
+}
+---
+
+<!doctype html>
+<Layout
+  title={appSettings.formatTitle("All posts")}
+  description={SITE_DESCRIPTION}
+  activeMenu="News"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 news-post">
+        <div class="card col-sm-12 px-3 shadow-sm"
+            style="margin-bottom:30px;padding-bottom:20px">
+          <h2 style="margin-top:10px">All posts</h2>
+{
+  posts.map((post) => {
+    return (
+      <div>
+        { lastDateStr !== formatDate(post.data.pubDate) &&
+          <h4 style="margin-top:20px">{formatDateAndSetLastDate(post.data.pubDate)}</h4>
+        }
+        <article style="padding-left: 40px">
+          <h5 style="margin-top:10px">
+            <a href={`/news/${post.slug}/`}>{post.data.title}</a>
+          </h5>
+        </article>
+      </div>
+    );
+  })
+}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

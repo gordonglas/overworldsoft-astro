@@ -1,0 +1,37 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { appSettings } from '@root/consts';
+
+const title = 'Contact ' + appSettings.company;
+---
+
+<!doctype html>
+<Layout
+  title={title}
+  description={title}
+  activeMenu="Home"
+>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>{title}</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row pt-4">
+      <div class="col-sm-12">
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <td>Support:</td>
+              <td><i class="bi bi-envelope-fill"></i> <a href="mailto:support@overworldsoft.com">support@overworldsoft.com</a></td>
+            </tr>
+            <tr>
+              <td>General Inquiries:</td>
+              <td><i class="bi bi-envelope-fill"></i> <a href="mailto:contact@overworldsoft.com">contact@overworldsoft.com</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</Layout>

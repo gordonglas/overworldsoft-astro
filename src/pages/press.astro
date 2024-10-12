@@ -1,0 +1,152 @@
+---
+import LayoutCustom from '@layouts/LayoutCustom.astro';
+import { appSettings } from '@root/consts';
+
+const description = appSettings.company + ' - Press';
+---
+
+<!doctype html>
+<LayoutCustom
+  title={appSettings.company}
+  description={description}
+>
+  <!-- https://docs.astro.build/en/basics/astro-components/#named-slots -->
+  <Fragment slot="head">
+    <link href="/press/uikit.gradient.min.css" rel="stylesheet" type="text/css" />
+    <link href="/press/press-style.css" rel="stylesheet" type="text/css" />
+  </Fragment>
+
+  <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+      <div id="navigation" class="uk-width-medium-1-4">
+        <h1 class="nav-header">Overworld Software</h1>
+        <a class="nav-header" href="/">overworldsoft.com</a>
+        <ul class="uk-nav uk-nav-side">
+          <li><a href="#factsheet">Factsheet</a></li>
+          <li><a href="#description">Description</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#trailers">Videos</a></li>
+          <li><a href="#images">Images</a></li>
+          <li><a href="#logo">Logo &amp; Icon</a></li>
+          <li><a href="#credits">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id="content" class="uk-width-medium-3-4">
+        <div class="uk-grid">
+          <div class="uk-width-medium-2-6">
+            <h2 id="factsheet">Factsheet</h2>
+            <p>
+              <strong>Developer:</strong><br />
+              <a href="/">Overworld Software</a><br />
+              Based in Dallas, Texas, USA
+            </p>
+            <p>
+              <strong>Founding date:</strong><br />
+              October 20, 2016
+            </p>
+            <p>
+              <strong>Website:</strong><br />
+              <a href="/">overworldsoft.com</a>
+            </p>
+            <p>
+              <strong>Press / Business contact:</strong><br />
+              <a href="mailto:contact@overworldsoft.com">contact@overworldsoft.com</a>
+            </p>
+            <p>
+              <strong>Social:</strong><br /><a href="https://twitter.com/overworldsoft">twitter.com/overworldsoft</a><br /><a href="https://facebook.com/overworldsoft">facebook.com/overworldsoft</a><br />
+            </p>
+            <p>
+              <strong>Releases:</strong><br />
+              <a href="https://web.archive.org/web/20201111171550/http://www.eat-studios.com/press/sheet.php?p=xblig_companion">Press: Xblig Companion (Android)</a><br />
+              <a href="/xblig-companion/">Xblig Companion Landing page</a>
+            </p>
+            <p>
+              <strong>Phone:</strong><br />
+              N/A
+            </p>
+          </div>
+          <div class="uk-width-medium-4-6">
+            <h2 id="description">Description</h2>
+            <p>
+              Overworld Software is a one-man indie game studio.
+            </p>
+            <h2 id="history">History</h2><strong>In the beginning...</strong>
+            <p>
+              Before there was Overworld Software, Gordon Glas did both music and programming with gamedev teams online since 1996, working on games that were never completed. In 2002, he almost finished a <a href="https://github.com/gordonglas/gba-breakout">breakout clone for GBA</a>.
+              In 2011, he formed Tokki Soft and developed the <a href="/xblig-companion/">Android version of XBLIG Companion</a>, an app that helps gamers find indie games on the XBox 360.
+            </p><strong>And then...</strong>
+            <p>In 2016, Gordon wanted a more suiting company name, and so Overworld Software was born. He hopes he can bring his game ideas to life.</p>
+            <h2 id="projects">Projects</h2>
+            <ul>
+              <li><a href="https://web.archive.org/web/20201111171550/http://www.eat-studios.com/press/sheet.php?p=xblig_companion">Press: Xblig Companion (Android version)</a> | <a href="/xblig-companion">Landing page</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <h2 id="trailers">Videos</h2><p>There are currently no trailers available for Overworld Software. Check back later for more or <a href="#contact">contact us</a> for specific requests!</p>
+
+        <hr />
+
+        <h2 id="images">Images</h2>
+        
+        <div class="uk-grid images">
+          <div class="uk-width-medium-1-2">
+            <img src="/press/img/gordonglas.png" alt="gordonglas.png" />
+          </div>
+        </div>
+        <p class="images-text">There are far more images available for Overworld Software, but these are the ones we felt would be most useful to you. If you have specific requests, please <a href="#contact">contact us</a>!</p>
+
+        <hr />
+
+        <h2 id="logo">Logo &amp; Icon</h2>
+        <div class="uk-grid images"></div>
+        <p>There are currently no logos or icons available for Overworld Software. Check back later for more or <a href="#contact">contact us</a> for specific requests!</p>
+        
+        <hr />
+        
+        <div class="uk-grid">
+          <div class="uk-width-medium-1-2">
+            <h2 id="credits">Team &amp; Repeating Collaborator</h2><p><strong>Gordon Glas</strong><br />Founder, Programmer, Music, Artist, Janitorial</p>
+          </div>
+          <div class="uk-width-medium-1-2">
+            <h2 id="contact">Contact</h2>
+            <p><strong>Inquiries</strong><br />
+              <a href="mailto:contact@overworldsoft.com">contact@overworldsoft.com</a>
+            </p>
+            <p><strong>Twitter</strong><br />
+              <a href="https://twitter.com/overworldsoft">twitter.com/overworldsoft</a>
+            </p>
+            <p><strong>Facebook</strong><br />
+              <a href="https://facebook.com/overworldsoft">facebook.com/overworldsoft</a>
+            </p>
+            <p><strong>Web</strong><br />
+              <a href="/">overworldsoft.com</a>
+            </p>
+            <p><strong>News</strong><br />
+              <a href="/news/">overworldsoft.com/news</a>
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <p><a href="https://dopresskit.com/">presskit()</a> by Rami Ismail (<a href="https://www.vlambeer.com/">Vlambeer</a>) - also thanks to <a href="/press/credits.html">these fine folks</a></p>
+      </div>
+    </div>
+</div>
+
+  <script is:inline src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+  <script is:inline>
+      var container = document.querySelector('.images');
+      imagesLoaded(container, function (instance) {
+          var msnry = new Masonry(container, {
+              itemSelector: '.uk-width-medium-1-2',
+          });
+      });
+  </script>
+</LayoutCustom>

@@ -1,7 +1,10 @@
 {
   "name": "overworldsoft-astro",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
+  "private": true,
+  "description": "overworld-software",
+  "author": "gglas",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,7 +16,10 @@
     "@astrojs/mdx": "^3.1.8",
     "@astrojs/rss": "^4.0.8",
     "@astrojs/sitemap": "^3.2.0",
+    "@popperjs/core": "^2.11.8",
     "astro": "^4.16.0",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "markdown-it": "^14.1.0"
   }
 }

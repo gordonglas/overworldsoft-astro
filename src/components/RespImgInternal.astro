@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+}
+
+const { src, alt, width } = Astro.props;
+
+// calculate widths attribute
+const maxWidth: number = Math.round(width > 1000 ? 1000 : width);
+let widths: number[] = [];
+widths[0] = Math.round(maxWidth * .3);
+widths[1] = Math.round(maxWidth * .6);
+widths[2] = maxWidth;
+
+let sizes: string = `(max-width: ${maxWidth}px) 100vw, ${maxWidth}px`;
+
+---
+
+<Image src={src} alt={alt}
+    widths={widths}
+    sizes={sizes} />

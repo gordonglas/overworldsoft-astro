@@ -1,8 +1,4 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-
 interface Props {
 	title: string;
 	description: string;
@@ -11,18 +7,26 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description/*, image = '/blog-placeholder-1.jpg'*/ } = Astro.props;
+const { title, description/*, image = '/apple-touch-icon.png'*/ } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="/css/bootstrap5-dark.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-icons/bootstrap-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" href="/css/theme-dark.css" />
+<!-- TODO: when everything is stable, minify the three css files into one. -->
+<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap5-site-theme-min.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-icons/bootstrap-icons.min.css" /> -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -46,10 +50,14 @@ const { title, description/*, image = '/blog-placeholder-1.jpg'*/ } = Astro.prop
 <meta property="twitter:description" content={description} />
 <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
 
-<link rel="apple-touch-icon" sizes="96x96" href="/img/touch-icon-96-96.png" />
-
 <!-- For Mastodon link verification: https://docs.joinmastodon.org/user/profile/#verification -->
 <link href="https://mastodon.gamedev.place/@kefka" rel="me" />
+
+<!-- bootstrap js -->
+<!-- notice how these are relative paths to node_modules.
+     alternatively can use import inside the script tag: https://stackoverflow.com/a/77723375 -->
+<script src="@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- syntax highlighting for markdown code blocks -->
 <link href="/css/prism.css" rel="stylesheet" />

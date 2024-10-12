@@ -1,0 +1,38 @@
+---
+// responsive image component with optional link
+
+import RespImgInternal from './RespImgInternal.astro';
+
+interface Props {
+  src: string; // original image somewhere under /src used to build responsive images from.
+  alt: string; // img alt attribute.
+  publicurl?: string; // optional url to image in public folder for link.
+  width: number; // max width of the image
+}
+
+const { src, alt, publicurl = '', width } = Astro.props;
+
+let img_wrapper_class = 'astro-blog-image';
+let alt_text = alt;
+if (alt.includes('| center')) {
+  // css must be able to center higher up the DOM hierarchy
+  // ..not on the image itself. This fixes a problem where
+  // the anchor tag includes the horizontal overflow
+  img_wrapper_class += ' center-image';
+
+  // Remove the '| center' from alt just to keep it clean.
+  alt_text = alt.replace('| center', '').trim();
+}
+---
+
+{publicurl != '' ? (
+<div class={img_wrapper_class}>
+  <a href={publicurl} target="_blank">
+    <RespImgInternal src={src} alt={alt_text} width={width} />
+  </a>
+</div>
+) : (
+<div class={img_wrapper_class}>
+  <RespImgInternal src={src} alt={alt_text} width={width} />
+</div>
+)}

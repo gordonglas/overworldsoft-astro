@@ -1,20 +1,43 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import NewsPost from '../../layouts/NewsPost.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Comments from "@components/Comments.astro";
+import { SITE_DESCRIPTION, appSettings } from "@root/consts";
+import FormattedDate from "@components/FormattedDate.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('news');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("news");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'news'>;
+type Props = CollectionEntry<"news">;
 
 const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<NewsPost {...post.data}>
-	<Content />
-</NewsPost>
+<!doctype html>
+<Layout
+  title={appSettings.formatTitle("News")}
+  description={SITE_DESCRIPTION}
+  activeMenu="News"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 news-post">
+        <h2>{post.data.title}</h2>
+        <div class="date">
+          <FormattedDate date={post.data.pubDate} />
+        </div>
+        <div class="news-content">
+          <Content />
+        </div>
+        <span class="clearfix"></span>
+
+        <Comments />
+      </div>
+    </div>
+  </div>
+</Layout>
