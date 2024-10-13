@@ -11,12 +11,6 @@
     line-height: 1.2;
 }
 
-/* gatsby overrides */
-
-.news-content img.gatsby-resp-image-image {
-    box-shadow: unset !important;
-}
-
 /* custom stuff */
 
 .social-icon::before {
@@ -62,7 +56,7 @@
     overflow: hidden;
 }
 
-.news-content p, .news-content span span.gatsby-resp-image-wrapper {
+.news-content p {
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -142,3 +136,29 @@ _:-moz-tree-row(hover), select.form-control {
     -moz-appearance: none;
     appearance: none;
 }*/
+
+.center-image {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.astro-blog-image {
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.astro-blog-image a {
+    margin: 0 auto;
+}
+
+.astro-blog-image a img {
+    /* responsive image */
+    display: inline;
+    max-width: 100%;
+    height: auto;
+}
+
+.hide {
+    visibility: hidden;
+    display: none;
+}
