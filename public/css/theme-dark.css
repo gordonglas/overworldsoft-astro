@@ -1,62 +1,62 @@
 /* old bootstrap stuff */
 
 .jumbotron {
-    background-color: #303030;
+  background-color: #303030;
 }
 
 /* custom stuff */
 
 body {
-    color: #bfc9d2;
+  color: #bfc9d2;
 }
 
 #isso-thread h4 {
-    color: #bfc9d2 !important;
+  color: #bfc9d2 !important;
 }
 
 #isso-thread .textarea.placeholder {
-    color: #444 !important;
-    opacity: 1 !important;
+  color: #444 !important;
+  opacity: 1 !important;
 }
 
 #isso-thread .input-wrapper input::placeholder {
-    color: #444 !important;
-    opacity: 1 !important;
+  color: #444 !important;
+  opacity: 1 !important;
 }
 
 input[type="text"],
 input[type="email"] {
-    background-color: #b7b7b7 !important;
+  background-color: #b7b7b7 !important;
 }
 
 textarea.form-control {
-    background-color: #b7b7b7 !important;
+  background-color: #b7b7b7 !important;
 }
 
 select {
-    background-color: #b7b7b7 !important;
+  background-color: #b7b7b7 !important;
 }
 
-.isso-postbox > .form-wrapper .textarea,
-.isso-postbox > .form-wrapper .preview {
-    background-color: #b7b7b7 !important;
+.isso-postbox>.form-wrapper .textarea,
+.isso-postbox>.form-wrapper .preview {
+  background-color: #b7b7b7 !important;
 }
 
 .isso-postbox .textarea {
-    color: black;
+  color: black;
 }
 
 .preview .isso-comment .text {
-    color: black;
+  color: black;
 }
 
 .isso-feedlink:hover,
-.isso-comment > div.text-wrapper > .isso-comment-footer a.delete:hover,
-.isso-comment > div.text-wrapper > .isso-comment-footer a.edit:hover {
-    color: #b7b7b7 !important;
+.isso-comment>div.text-wrapper>.isso-comment-footer a.delete:hover,
+.isso-comment>div.text-wrapper>.isso-comment-footer a.edit:hover {
+  color: #b7b7b7 !important;
 }
 
 .image-options,
 .uploaded-images {
-    background-color: #12283D;
+  background-color: #12283D;
 }
