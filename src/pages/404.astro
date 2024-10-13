@@ -1,0 +1,32 @@
+---
+import LayoutCustom from '@layouts/LayoutCustom.astro';
+import { SITE_DESCRIPTION, appSettings } from '@root/consts';
+
+// styles
+const pageStyles = {
+  color: "#bfc9d2",
+  backgroundColor: "#222222",
+  padding: "96px",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
+const headingStyles = {
+  marginTop: "0px",
+  marginBottom: "30px",
+}
+const paragraphStyles = {
+  marginBottom: "48px",
+}
+---
+
+<!doctype html>
+<LayoutCustom
+  title={appSettings.formatTitle("404 - Page not found")}
+  description={SITE_DESCRIPTION}
+>
+  <div style={pageStyles}>
+    <h1 style={headingStyles}>404 - Page not found</h1>
+    <p style={paragraphStyles}>
+      <a href="/">Go home</a>.
+    </p>
+  </div>
+</Layout>
